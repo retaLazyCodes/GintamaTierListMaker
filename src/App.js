@@ -1,31 +1,31 @@
-import './App.css'
+import { useEffect } from 'react';
+import reactDragula from 'react-dragula';
 import Card from './components/Card'
+import './App.css'
 
-const React = require('react');
-const dragula = require('react-dragula');
 
-class App extends React.Component {
-  componentDidMount() {
-    let left = document.getElementById('left');
-    let right = document.getElementById('right');
-    dragula([left, right]);
-  }
+function App() {
 
-  render() {
-    return (
-      <div className="container">
-        <div id="left" className="container">
-          <Card body="Card 1" />
-          <Card body="Card 2" />
-          <Card body="Card 3" />
-          <Card body="Card 4" />
-        </div>
-        <div id="right" className="container">
-        </div>
+  useEffect(() => {
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+    reactDragula([left, right]);
+
+  }, [])
+
+  return (
+    <div className="container">
+      <div id="left" className="container">
+        <Card body="Card 1" />
+        <Card body="Card 2" />
+        <Card body="Card 3" />
+        <Card body="Card 4" />
       </div>
-    );
-  }
+      <div id="right" className="container">
+        <Card body="Card 5" />
+      </div>
+    </div>
+  );
 }
-
 
 export default App;
