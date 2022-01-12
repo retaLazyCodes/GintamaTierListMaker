@@ -1,9 +1,9 @@
-import { arcsService } from "services/arcs"
+import { arcsService } from "../../services/arcs"
 
 export function attendeesReducer(state = [], action) {
     console.log('ACTION:', action)
     switch (action.type) {
-        case '@attendees/init':
+        case '@arcs/init':
             return action.payload
 
         default:
