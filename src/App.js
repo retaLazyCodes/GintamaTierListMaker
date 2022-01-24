@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import CardList from './components/CardList';
 import { initArcs } from './store/reducers/arcsReducer';
-import './App.css'
+import TierList from './components/TierList';
+import './css/App.css'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   }, [dispatch])
 
   return (
-    <CardList />
+    <TierList />
   );
 }
 

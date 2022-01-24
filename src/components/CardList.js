@@ -19,7 +19,7 @@ function CardList() {
                 {
                     arcs.map(card => {
                         return (
-                            <Card body={card.name} key={card.id} />
+                            <Card body={card.Name} key={card.Name} />
                         )
                     })
                 }

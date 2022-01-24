@@ -1,10 +1,10 @@
 import { applyMiddleware, createStore } from "redux";
-import { attendeesReducer } from "./reducers/arcsReducer";
+import { arcsReducer } from "./reducers/arcsReducer";
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk";
 
 export const store = createStore(
-    attendeesReducer,
+    arcsReducer,
     composeWithDevTools(
         applyMiddleware(thunk)
     )
