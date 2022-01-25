@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import reactDragula from "react-dragula";
-import { adding, changingTier } from "./actions";
+import { changingTier } from "./actions";
 import Card from './Card';
 
 
@@ -58,27 +58,57 @@ function TierList() {
             <div className="container">
                 <div className="sTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "sTier")}>
                     <div className="tier">S</div>
-                    <div className="tier-list" id="sTier">{list.sTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="sTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.sTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="aTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "aTier")}>
                     <div className="tier">A</div>
-                    <div className="tier-list" id="aTier">{list.aTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="aTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.aTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="bTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "bTier")}>
                     <div className="tier">B</div>
-                    <div className="tier-list" id="bTier">{list.bTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="bTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.bTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="cTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "cTier")}>
                     <div className="tier">C</div>
-                    <div className="tier-list" id="cTier">{list.cTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="cTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.cTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="dTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "dTier")}>
                     <div className="tier">D</div>
-                    <div className="tier-list" id="dTier">{list.dTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="dTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.dTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="fTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "fTier")}>
                     <div className="tier">F</div>
-                    <div className="tier-list" id="fTier">{list.fTier}</div>
+                    <div className="container-fluid mb-4">
+                        <div id="fTier"
+                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            {list.fTier}
+                        </div>
+                    </div>
                 </div>
                 <div className="benchTier tier-row-odd">
 

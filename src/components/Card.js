@@ -1,6 +1,6 @@
 function Card({ body, image }) {
 
-    var image = image.replace("/revision/latest", "");
+    image = image.replace("/revision/latest", "");
 
     return (
         <div className="card">
