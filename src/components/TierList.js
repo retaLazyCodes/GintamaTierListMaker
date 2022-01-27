@@ -122,7 +122,7 @@ function TierList() {
                                     card.tier = 'benchTier';
                                     card.index = 0;
                                     return (
-                                        <Card body={card.Name} image={card.Image} key={card.Name} />
+                                        <Card body={card.name} image={card.image} key={card.id} />
                                     )
                                 })
                             }

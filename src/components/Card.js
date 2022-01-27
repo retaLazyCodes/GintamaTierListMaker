@@ -1,7 +1,5 @@
 function Card({ body, image }) {
 
-    image = image.replace("/revision/latest", "");
-
     return (
         <div className="card">
             <img src={image} className="card-img-top" alt="card-image" />
