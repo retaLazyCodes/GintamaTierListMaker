@@ -1,14 +1,10 @@
-function Card({ body, image }) {
+function Card({ name, image, url }) {
 
     return (
         <div className="card">
-            <img src={image} className="card-img-top" alt="card-image" />
-            {/* <div className="card-header">
-                <h3>Example Card</h3>
-            </div>
-            <div className="card-body">
-                <p>{body}</p>
-            </div> */}
+            <a href={url} target="_blank">
+                <img src={image} className="card-img-top" alt="card-image" />
+            </a>
         </div>
     );
 }
