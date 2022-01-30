@@ -6,7 +6,6 @@ import Card from './Card';
 
 
 function TierList() {
-    const [item, setItem] = React.useState("");
 
     const tierlist = useSelector(state => state);
 
@@ -110,20 +109,65 @@ function TierList() {
                         </div>
                     </div>
                 </div>
-                <div className="benchTier tier-row-odd">
+                <div className="benchTier tier-row-odd" style={{ height: "30rem", overflow: "auto" }}>
 
                     <div className="tier-bench">Bench</div>
-                    <div className="container-fluid mb-4">
+                    <div className="container-fluid">
                         <div id="benchTier" className="row justify-content-center row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
                             onDragOver={onDragOver}
-                            onDrop={(e) => onDrop(e, "benchTier")}>
+                            onDrop={(e) => onDrop(e, "benchTier")}
+                        >
                             {
                                 tierlist.map(card => {
                                     card.tier = 'benchTier';
                                     card.index = 0;
                                     return (
+
                                         <Card name={card.name} image={card.image}
-                                            url={card.url} key={card.id} />
+                                            url={card.url} desc={card.description} key={card.id} />
+                                        // <div class="dropdown is-hoverable">
+                                        //     <div class="dropdown-trigger">
+                                        //     </div>
+
+                                        /* <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content" >
+                                    <div class="dropdown-item">
+
+                                        <div class="card" style={{ width: '18rem' }}>
+                                            <img src={card.image} class="card-img-top" alt="..." />
+                                            <div class="card-body">
+                                                <h5 class="card-title">{card.name}</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.
+                                                    Some quick example text to build on the card title and make up
+                                                    the bulk of the card's
+                                                    content.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> */
+
+                                        // </div>
                                     )
                                 })
                             }
