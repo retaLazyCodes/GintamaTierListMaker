@@ -79,16 +79,15 @@
   text-align: center;
 }
 .card {
-  position: relative;
   float: left;
   margin: 10px;
-  width: 7em;
+  width: 6rem;
   height: 100%;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.4s;
   background-color: white;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
   overflow: hidden;
   padding: .1%;
 }

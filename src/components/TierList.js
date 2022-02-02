@@ -55,123 +55,63 @@ function TierList() {
             <div className="sub-title">Rank your favorite plot arcs</div>
 
             <div className="container">
-                <div className="sTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "sTier")}>
+                <div className="sTier tier-row-odd">
                     <div className="tier">S</div>
-                    <div className="container-fluid mb-4">
-                        <div id="sTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.sTier}
-                        </div>
+                    <div id="sTier"
+                        className="tier-list">
+                        {list.sTier}
                     </div>
                 </div>
-                <div className="aTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "aTier")}>
+                <div className="aTier tier-row-even">
                     <div className="tier">A</div>
-                    <div className="container-fluid mb-4">
-                        <div id="aTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.aTier}
-                        </div>
+                    <div id="aTier"
+                        className="tier-list">
+                        {list.aTier}
                     </div>
                 </div>
-                <div className="bTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "bTier")}>
+                <div className="bTier tier-row-odd">
                     <div className="tier">B</div>
-                    <div className="container-fluid mb-4">
-                        <div id="bTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.bTier}
-                        </div>
+                    <div id="bTier"
+                        className="tier-list">
+                        {list.bTier}
                     </div>
                 </div>
-                <div className="cTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "cTier")}>
+                <div className="cTier tier-row-even">
                     <div className="tier">C</div>
-                    <div className="container-fluid mb-4">
-                        <div id="cTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.cTier}
-                        </div>
+                    <div id="cTier"
+                        className="tier-list">
+                        {list.cTier}
                     </div>
                 </div>
-                <div className="dTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "dTier")}>
+                <div className="dTier tier-row-odd" >
                     <div className="tier">D</div>
-                    <div className="container-fluid mb-4">
-                        <div id="dTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.dTier}
-                        </div>
+                    <div id="dTier"
+                        className="tier-list">
+                        {list.dTier}
                     </div>
                 </div>
-                <div className="fTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "fTier")}>
+                <div className="fTier tier-row-even">
                     <div className="tier">F</div>
-                    <div className="container-fluid mb-4">
-                        <div id="fTier"
-                            className="tier-list row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {list.fTier}
-                        </div>
+                    <div id="fTier"
+                        className="tier-list">
+                        {list.fTier}
                     </div>
                 </div>
-                <div className="benchTier tier-row-odd" style={{ height: "30rem", overflow: "auto" }}>
+                <div className="benchTier tier-row-odd">
 
                     <div className="tier-bench">Bench</div>
-                    <div className="container-fluid">
-                        <div id="benchTier" className="row justify-content-center row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
-                            onDragOver={onDragOver}
-                            onDrop={(e) => onDrop(e, "benchTier")}
-                        >
-                            {
-                                tierlist.map(card => {
-                                    card.tier = 'benchTier';
-                                    card.index = 0;
-                                    return (
+                    <div id="benchTier">
+                        {
+                            tierlist.map(card => {
+                                card.tier = 'benchTier';
+                                card.index = 0;
+                                return (
 
-                                        <Card name={card.name} image={card.image}
-                                            url={card.url} desc={card.description} key={card.id} />
-                                        // <div class="dropdown is-hoverable">
-                                        //     <div class="dropdown-trigger">
-                                        //     </div>
-
-                                        /* <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content" >
-                                    <div class="dropdown-item">
-
-                                        <div class="card" style={{ width: '18rem' }}>
-                                            <img src={card.image} class="card-img-top" alt="..." />
-                                            <div class="card-body">
-                                                <h5 class="card-title">{card.name}</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.
-                                                    Some quick example text to build on the card title and make up
-                                                    the bulk of the card's
-                                                    content.</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div> */
-
-                                        // </div>
-                                    )
-                                })
-                            }
-                        </div>
+                                    <Card name={card.name} image={card.image}
+                                        url={card.url} desc={card.description} key={card.id} />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
