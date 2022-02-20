@@ -1,43 +1,42 @@
 import React from "react";
 
-function Card({ name, image, url, desc }) {
+function Card({ id, name, image, url, desc, onDragStart }) {
 
     const [isShown, setIsShown] = React.useState(false);
 
     return (
 
-        <div class="dropdown is-hoverable is-up">
+        <div className="dropdown is-hoverable is-up" id={id}>
 
             <div className="card dropdown-trigger"
                 onMouseEnter={() => setIsShown(true)}
                 onMouseLeave={() => setIsShown(false)}
+                draggable onDragStart={(e) => onDragStart(e, id)}
             >
                 <div className="card-image">
-                    <figure class="image is-3by2">
+                    <figure className="image is-3by2">
                         <img src={image} alt="card-image" />
                     </figure>
                 </div>
 
             </div >
 
-            <div class="dropdown-menu" id="dropdown-menu4" role="menu" style={{
+            <div className="dropdown-menu" id="dropdown-menu4" role="menu" style={{
                 width: '15rem'
             }}>
-                {/* <div class="dropdown-content" > */}
-                <div class="dropdown-item">
+                <div className="dropdown-item">
 
-                    <div class="card" style={{
+                    <div className="card" style={{
                         height: '18rem', width: '100%',
                     }}>
                         <img src={image} alt="..." />
-                        <div class="card-body">
-                            <h5 class="title is-6" style={{ marginBottom: '2px' }}>{name}</h5>
-                            <p class="subtitle is-6" style={{ margin: '0 1px' }}>{desc}</p>
+                        <div className="card-body">
+                            <h5 className="title is-6" style={{ marginBottom: '2px' }}>{name}</h5>
+                            <p className="subtitle is-6" style={{ margin: '0 1px' }}>{desc}</p>
                         </div>
                     </div>
 
                 </div>
-                {/* </div> */}
             </div>
 
         </div >

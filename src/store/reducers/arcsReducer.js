@@ -1,15 +1,22 @@
 import { arcsService } from "../../services/arcs"
 
-export function arcsReducer(state = [], action) {
+const initialState = {
+    tierlist: []
+};
+
+export function arcsReducer(state = initialState, action) {
     console.log('ACTION:', action)
     switch (action.type) {
         case '@arcs/INIT':
-            return action.payload.map(card => ({ ...card, tier: 'benchTier', index: 0 }))
+            return {
+                ...state,
+                tierlist: action.payload.map(item => ({ tier: 'benchTier', index: 0, ...item }))
+            }
 
         case "@arcs/CHANGING_TIER":
             return {
-                ...state, tierlist: state.filter(item => item.tier !== action.payload,
-                    item => item.index !== action.payload)
+                ...state,
+                tierlist: state.tierlist.filter(item => item.tier !== action.payload, item => item.index !== action.payload)
             };
 
         default:

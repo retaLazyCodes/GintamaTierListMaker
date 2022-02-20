@@ -1,10 +1,15 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, combineReducers } from "redux";
 import { arcsReducer } from "./reducers/arcsReducer";
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk";
 
+const allReducers = combineReducers({
+    tierlist: arcsReducer
+})
+
+
 export const store = createStore(
-    arcsReducer,
+    allReducers,
     composeWithDevTools(
         applyMiddleware(thunk)
     )
