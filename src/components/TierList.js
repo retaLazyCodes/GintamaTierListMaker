@@ -30,7 +30,6 @@ function TierList() {
 
     const onDrop = (e, tier) => {
         let itemId = Number(e.dataTransfer.getData("item"));
-        console.log(tierlist)
         let items = tierlist.filter((item) => {
             if (item.id === itemId) {
                 item.tier = tier;
@@ -38,9 +37,6 @@ function TierList() {
             }
             return item;
         })
-        console.log(tier)
-        console.log(itemId)
-        console.log(items)
         dispatch(changingTier(items));
     }
 
@@ -96,7 +92,6 @@ function TierList() {
                     </div>
                 </div>
                 <div className="benchTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "benchTier")}>
-
                     <div className="tier-bench">Bench</div>
                     <div id="benchTier" className="tier-list">
                         {list.benchTier}
