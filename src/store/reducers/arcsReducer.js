@@ -13,6 +13,13 @@ export function arcsReducer(state = initialState, action) {
                 tierlist: action.payload.map(item => ({ tier: 'benchTier', index: 0, ...item }))
             }
 
+        case '@arcs/LOAD_TIERLIST':
+            console.log(action.payload)
+            return {
+                ...state,
+                tierlist: action.payload.tierlist.tierlist
+            }
+
         case "@arcs/CHANGING_TIER":
             return {
                 ...state,
@@ -26,6 +33,7 @@ export function arcsReducer(state = initialState, action) {
 
 
 export const initArcs = () => {
+
     return async (dispatch) => {
         const arcs = await arcsService.getAll()
 

@@ -4,3 +4,10 @@ export const changingTier = (item) => {
         payload: item
     };
 }
+
+export const loadState = (state) => {
+    return {
+        type: '@arcs/LOAD_TIERLIST',
+        payload: state
+    };
+}

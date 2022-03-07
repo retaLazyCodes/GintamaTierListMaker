@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { changingTier } from "./actions";
 import Card from './Card';
 
 
 function TierList() {
 
+    const [storedState, setStoredState] = useLocalStorage('tiers', [])
     const tierlist = useSelector(state => state.tierlist.tierlist);
+
+    console.log(tierlist)
 
     const dispatch = useDispatch();
 
@@ -40,6 +44,16 @@ function TierList() {
         dispatch(changingTier(items));
     }
 
+    const saveState = () => {
+        console.log(storedState)
+        const newState = {
+            tierlist: {
+                tierlist: tierlist
+            }
+        }
+        setStoredState(newState);
+    }
+
     tierlist.sort((a, b) => a.index - b.index).map((card) => {
         list[card.tier].push(
             <Card id={card.id} name={card.name} image={card.image}
@@ -53,6 +67,15 @@ function TierList() {
         <div className="App">
             <div className="title">Gintama TierList Maker</div>
             <div className="sub-title">Rank your favorite plot arcs</div>
+            <div>
+                <button className="button is-warning is-outlined"
+                    onClick={saveState}>
+                    <span className="icon is-small">
+                        <i className="fas fa-check"></i>
+                    </span>
+                    <span>Save State</span>
+                </button>
+            </div>
 
             <div className="container">
                 <div className="sTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "sTier")}>
