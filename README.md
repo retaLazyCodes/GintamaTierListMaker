@@ -1,5 +1,6 @@
 # Gintama Tier Maker ✨
 
+See the Live version [clicking here](https://retalazycode-gintama-tierlist.netlify.app)
 ![ScreenShot](https://raw.githubusercontent.com/retaLazyCodes/GintamaTierList/master/assets/gintama.jpg) 
 
 See the details of this project [clicking here](https://github.com/retaLazyCodes/GintamaScraper#readme)
