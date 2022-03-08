@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-
 import { initArcs } from './store/reducers/arcsReducer';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import TierList from './components/TierList';

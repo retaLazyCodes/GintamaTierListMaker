@@ -1,12 +1,8 @@
-import axios from 'axios'
-import { API_URL } from './settings'
-
+import db from './db.json'
 
 const getAll = () => {
-    const request = axios.get(API_URL)
-    return request.then(response => response.data)
+    return db.arcs
 }
-
 
 export const arcsService = {
     getAll,
