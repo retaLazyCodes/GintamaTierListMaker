@@ -19,7 +19,7 @@ function myFunction() {
             // detectar posicion en el eje Y
             if (mousePosY < (screenSize.height / 2)) {
                 // estas en la parte superior de la mitad de la pantalla en el eje Y
-                // console.log(`estas en la parte INFERIOR. HEIGHT:${screenSize.height} MOUSE_POS_Y:${mousePosY}`)
+                // console.log(`estas en la parte SUPERIOR. HEIGHT:${screenSize.height} MOUSE_POS_Y:${mousePosY}`)
                 el.classList.remove('is-up')
                 // console.log(el)
             } else {
@@ -46,4 +46,4 @@ function myFunction() {
     }
 }
 
-setTimeout(myFunction, 3000)
+setTimeout(myFunction, 1000)
