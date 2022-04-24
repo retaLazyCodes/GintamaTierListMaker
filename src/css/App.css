@@ -4,9 +4,6 @@
   justify-content: center;
   text-align: center;
   background-image:url(./back.jpeg);
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
     
   /* Set up positioning */
   /* position: fixed; */
@@ -34,7 +31,7 @@
   grid-template-columns: auto;
   grid-template-rows: auto;
   width: 100%;
-  min-width: 1000px;
+  /* min-width: 1000px; */
   max-height: 1000px;
 }
 .tier-row-odd{
@@ -96,4 +93,40 @@
   transform: scale(0.9, 0.9);
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
     -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+@media (min-width: 950px) {
+  .container {
+    max-width: 900px;
+  }
+  .tier-row-odd{
+    background-color: rgb(156, 30, 30);
+  }
+  .App {
+    min-width: 100%;
+  }
+} 
+@media (max-width: 960px) {
+  .container {
+    max-width: 700px;
+  }
+  .tier-row-odd{
+    background-color: rgb(105, 52, 52);
+  }
+} 
+@media (max-width: 900px) {
+  .container {
+    max-width: 500px;
+  }
+  .tier-row-odd{
+    background-color: rgb(105, 52, 52);
+  }
+} 
+@media (max-width: 800px) {
+	.container {
+    max-width: 400px;
+  }
+  .tier-row-odd{
+    background-color: rgb(172, 141, 141);
+  }
 }
