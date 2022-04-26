@@ -79,7 +79,7 @@ function TierList() {
 
             <div className="container">
                 <div className="sTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "sTier")}>
-                    <div className="tier">S</div>
+                    <div className="tier">🧐🍷</div>
                     <div id="sTier" className="tier-list">
                         {list.sTier}
                     </div>
@@ -109,13 +109,13 @@ function TierList() {
                     </div>
                 </div>
                 <div className="fTier tier-row-even" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "fTier")}>
-                    <div className="tier">F</div>
+                    <div className="tier">😴</div>
                     <div id="fTier" className="tier-list">
                         {list.fTier}
                     </div>
                 </div>
                 <div className="benchTier tier-row-odd" onDragOver={onDragOver} onDrop={(e) => onDrop(e, "benchTier")}>
-                    <div className="tier-bench">Bench</div>
+                    <div className="tier-bench">Bench😎</div>
                     <div id="benchTier" className="tier-list">
                         {list.benchTier}
                     </div>
