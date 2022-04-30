@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ id, name, image, url, desc, onDragStart }) {
+function Card({ id, name, image, url, desc, release, onDragStart }) {
 
     const [isShown, setIsShown] = React.useState(false);
 

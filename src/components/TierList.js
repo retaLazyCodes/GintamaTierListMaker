@@ -56,8 +56,8 @@ function TierList() {
 
     tierlist.sort((a, b) => a.index - b.index).map((card) => {
         list[card.tier].push(
-            <Card id={card.id} name={card.name} image={card.image}
-                url={card.url} desc={card.description} key={card.id}
+            <Card id={card.Id} name={card.Name} image={card.Image} url={card.Url}
+                 desc={card.Description} release={card.ReleaseDate} key={card.Id}
                 onDragStart={onDragStart}
             />
         )
