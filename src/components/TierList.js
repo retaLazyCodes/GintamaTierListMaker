@@ -35,7 +35,6 @@ function TierList() {
     const onDrop = (e, tier) => {
         let itemId = Number(e.dataTransfer.getData("item"));
         let items = tierlist.filter((item) => {
-            console.log(item)
             if (item.Id === itemId) {
                 item.tier = tier;
                 item.index = list[tier].length;
@@ -45,7 +44,9 @@ function TierList() {
         dispatch(changingTier(items));
     }
 
-    const saveState = () => {
+    const saveState = (e) => {
+        console.log(e.target)
+        e.target.classList.add('is-loading')
         console.log(storedState)
         const newState = {
             tierlist: {
@@ -53,12 +54,15 @@ function TierList() {
             }
         }
         setStoredState(newState);
+        window.setTimeout(() => {
+            e.target.classList.remove('is-loading')
+        },1000);
     }
 
     tierlist.sort((a, b) => a.index - b.index).map((card) => {
         list[card.tier].push(
-            <Card id={card.Id} name={card.Name} image={card.Image} url={card.Url}
-                 desc={card.Description} release={card.ReleaseDate} key={card.Id}
+            <Card id={card.Id} name={card.Name} image={card.Image}
+                episodes={card.Episodes} release={card.ReleaseDate} key={card.Id}
                 onDragStart={onDragStart}
             />
         )
@@ -69,12 +73,12 @@ function TierList() {
             <div className="title">Gintama TierList Maker</div>
             <div className="sub-title">Rank your favorite plot arcs</div>
             <div>
-                <button className="button is-warning is-outlined"
+                <button id='btn-save' className="button is-warning is-outlined"
                     onClick={saveState}>
-                    <span className="icon is-small">
+                    <span className="icon is-small" style={{marginRight: '2px'}}>
                         <i className="fas fa-check"></i>
                     </span>
-                    <span>Save State</span>
+                    Save State
                 </button>
             </div>
 

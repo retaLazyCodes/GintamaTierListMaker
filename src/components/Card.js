@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ id, name, image, url, desc, release, onDragStart }) {
+function Card({ id, name, image, episodes, release, onDragStart }) {
 
     const [isShown, setIsShown] = React.useState(false);
 
@@ -27,12 +27,31 @@ function Card({ id, name, image, url, desc, release, onDragStart }) {
                 <div className="dropdown-item">
 
                     <div className="card" style={{
-                        height: '18rem', width: '100%',
+                        height: '18rem', width: '100%', backgroundColor: 'black'
                     }}>
                         <img src={image} alt="..." />
                         <div className="card-body">
                             <h5 className="title is-6" style={{ marginBottom: '2px' }}>{name}</h5>
-                            <p className="subtitle is-6" style={{ margin: '0 1px' }}>{desc}</p>
+                            <div className="card-episodes">
+                                <div className="columns">
+                                    <div className="column">
+                                        Anime episodes:
+                                    </div>
+                                    <div className="column">
+                                        {episodes}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-release">
+                                <div className="columns">
+                                    <div className="column">
+                                        Release date:
+                                    </div>
+                                    <div className="column">
+                                        {release}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
