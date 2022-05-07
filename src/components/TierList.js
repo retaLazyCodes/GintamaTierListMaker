@@ -35,7 +35,8 @@ function TierList() {
     const onDrop = (e, tier) => {
         let itemId = Number(e.dataTransfer.getData("item"));
         let items = tierlist.filter((item) => {
-            if (item.id === itemId) {
+            console.log(item)
+            if (item.Id === itemId) {
                 item.tier = tier;
                 item.index = list[tier].length;
             }
