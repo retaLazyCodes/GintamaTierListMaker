@@ -1,4 +1,8 @@
-# Gintama Tier Maker ✨
+# Gintama Tier Maker ✨+
+
+## General info
+
+Simple React.js app that allows you to make a Tier List of plot Arcs from Gintama!!
 
 See the Live version [clicking here](https://retalazycode-gintama-tierlist.netlify.app)
 ![ScreenShot](https://raw.githubusercontent.com/retaLazyCodes/GintamaTierList/master/assets/gintama.jpg) 
